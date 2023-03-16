@@ -83,6 +83,16 @@ article {
         }
     }
 }
+
+.alert{
+    font-size: 2rem;
+    text-align: center;
+    margin-block-start: 4rem;
+}
+
+
+
+
 @media (max-width: 40em){
     
     article .repo-info {
