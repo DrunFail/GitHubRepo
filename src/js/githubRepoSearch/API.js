@@ -5,7 +5,7 @@ class API {
 
     async getRepo(params) {
         return await fetch(this.BASE_URL + this.search_repo + params)
-            .then(res => res.json())
+            
     }
     
 

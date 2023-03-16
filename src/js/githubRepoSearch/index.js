@@ -17,29 +17,34 @@ const fetchRepo = (e) => {
 
         //fetch data
         API.getRepo(queryString)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+            })
             .then(data => {
-                if (data.items.length) {
+                if (data.items && data.items.length) {
                     data.items.map(elem => result.append(RepoCard(elem)))
                 } else {
                     result.innerHTML = '<p class="alert">Hичего не найдено</p>'
                 }
-            }
-            )
+            })
+            .catch(error => console.log(error));
 
     } else {
         result.innerHTML = '<p class="alert">Введите хотя бы один символ</p>'
     }
 
 
-}
+};
 
 
 const input = document.querySelector('input');
 
 input.addEventListener('keydown', (e) => {
     if (e.key == 'Enter') {
-        fetchRepo
+        fetchRepo;
     }
-})
+});
 
-form.addEventListener('submit', fetchRepo)
+form.addEventListener('submit', fetchRepo);
